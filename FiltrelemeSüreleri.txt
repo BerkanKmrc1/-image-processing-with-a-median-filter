@@ -1,0 +1,12 @@
+GÖRÜNTÜLER          SÜRELERİ(ms) 
+GoruntuMatrisi1     69.406
+GoruntuMatrisi2     527.425
+GoruntuMatrisi3     2509.82
+GoruntuMatrisi4     2848.2
+GoruntuMatrisi5     4457.65
+GoruntuMatrisi6     10576.8
+GoruntuMatrisi7     22954.8
+GoruntuMatrisi8     22374.8
+GoruntuMatrisi9     39166.8
+GoruntuMatrisi10    56563.6
+GoruntuMatrisi11    110247
