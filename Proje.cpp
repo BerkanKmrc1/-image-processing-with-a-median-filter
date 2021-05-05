@@ -1,14 +1,6 @@
-//Uygulama ile İlgili Genel Açıklamalar:Berkan KÖMÜRCÜ
-//160757038
-//Bilgisayar Mühendisliği(İÖ) 
-//Paralel Programlama 
-//BM-308-50-50
-//2019 - 2020 Akademik Yılı Bahar Dönemi
-//Proje 1
-//Dr.Öğr.Üyesi Deniz DAL
 
 
-//Kütüphane Denklarasyonu
+//KÃ¼tÃ¼phane Denklarasyonu
 #include <iostream>
 #include <string>
 #include <string.h>
@@ -17,7 +9,7 @@
 #include <ctime>
 #include <fstream>
 
-//Fonksiyon Protetipleri=Programım tek bir main fonksiyonu ile çalışmaktadır
+//Fonksiyon Protetipleri=ProgramÄ±m tek bir main fonksiyonu ile Ã§alÄ±ÅŸmaktadÄ±r
 
 using namespace std;
 
@@ -27,62 +19,62 @@ int main(int argc, char* argv[]) {
 	    srand(time(0));
 	    int satirlar;//satirlar degiskeni
 	    int sutunlar;//sutunlar degiskeni
-	    ifstream okunacakDosya;//okunacakdosya adında içinde veri alabildiğimiz bir dosya oluşturduk ifstream ile
-	    okunacakDosya.open(argv[1]);//dosyayı açtık;argv1 ile açtık çünkü çalıştırırken komut satırından girdiğimiz ilk parametre argv1 olucak  
-	    okunacakDosya>>satirlar;//satirlar değişkenine okunacakDosya adındaki dosyanın ilk verisini kaydettik
-	    okunacakDosya>>sutunlar;//sutunlar değişkenine okunacakDosya adındaki dosyanın ikinci verisini kaydettik
-	    int geciciDegisken;//geciciDegisken adındabir temperature değişken tanımladık sıralama için kullanıcaz
-	    int index;//dosyaya veri yazmada ve programın farklı yerlerinde indis artırımları için bir değişken tanımladık
+	    ifstream okunacakDosya;//okunacakdosya adÄ±nda iÃ§inde veri alabildiÄŸimiz bir dosya oluÅŸturduk ifstream ile
+	    okunacakDosya.open(argv[1]);//dosyayÄ± aÃ§tÄ±k;argv1 ile aÃ§tÄ±k Ã§Ã¼nkÃ¼ Ã§alÄ±ÅŸtÄ±rÄ±rken komut satÄ±rÄ±ndan girdiÄŸimiz ilk parametre argv1 olucak  
+	    okunacakDosya>>satirlar;//satirlar deÄŸiÅŸkenine okunacakDosya adÄ±ndaki dosyanÄ±n ilk verisini kaydettik
+	    okunacakDosya>>sutunlar;//sutunlar deÄŸiÅŸkenine okunacakDosya adÄ±ndaki dosyanÄ±n ikinci verisini kaydettik
+	    int geciciDegisken;//geciciDegisken adÄ±ndabir temperature deÄŸiÅŸken tanÄ±mladÄ±k sÄ±ralama iÃ§in kullanÄ±caz
+	    int index;//dosyaya veri yazmada ve programÄ±n farklÄ± yerlerinde indis artÄ±rÄ±mlarÄ± iÃ§in bir deÄŸiÅŸken tanÄ±mladÄ±k
 	
-	    int * goruntuMatrisiPointer = new int[satirlar*sutunlar];//bir dinamik dizi tanımladık pointer aracılığıyla satir ve sutun çarpımı kadar veri tutucak.
+	    int * goruntuMatrisiPointer = new int[satirlar*sutunlar];//bir dinamik dizi tanÄ±mladÄ±k pointer aracÄ±lÄ±ÄŸÄ±yla satir ve sutun Ã§arpÄ±mÄ± kadar veri tutucak.
             
     
-            int atanacakIndisler;//goruntu matrisinin içine atacağımız indisler için bir değişken tanımladık
-            int matrisinIndisi=0;//matris indisini 0 dan başlattık
-            for(int s1=0;s1<satirlar;s1++)//satirlarin hepsini dolaşacak dıştaki döngüyü tanımladık
+            int atanacakIndisler;//goruntu matrisinin iÃ§ine atacaÄŸÄ±mÄ±z indisler iÃ§in bir deÄŸiÅŸken tanÄ±mladÄ±k
+            int matrisinIndisi=0;//matris indisini 0 dan baÅŸlattÄ±k
+            for(int s1=0;s1<satirlar;s1++)//satirlarin hepsini dolaÅŸacak dÄ±ÅŸtaki dÃ¶ngÃ¼yÃ¼ tanÄ±mladÄ±k
             {
-    	      for(int s2=0;s2<sutunlar;s2++)//sütunların hepsini dolaşıcak içteki döngüyü tanımladık
+    	      for(int s2=0;s2<sutunlar;s2++)//sÃ¼tunlarÄ±n hepsini dolaÅŸÄ±cak iÃ§teki dÃ¶ngÃ¼yÃ¼ tanÄ±mladÄ±k
     	      {
-    	        okunacakDosya>>atanacakIndisler;//atanacak indisler değişkenini aldık bunu satır ve sütunun yazılı olduğu satırdan değilde bir alt satırdan başlaması
-    	        //için yaptık  bu her okunduğunda bir artarak devam edicek yani matristeki her elemanın bir sağındaki indisi alıcak hep
-    	        goruntuMatrisiPointer[matrisinIndisi]=atanacakIndisler;//o elemanlarıda matrisin 0 dan satır ve sütun sayısı çarpımına kadar bütün indislerine atıcak
-    	        matrisinIndisi++;//matrisin indisini 1 arttırıyoruz her iterasyonda
+    	        okunacakDosya>>atanacakIndisler;//atanacak indisler deÄŸiÅŸkenini aldÄ±k bunu satÄ±r ve sÃ¼tunun yazÄ±lÄ± olduÄŸu satÄ±rdan deÄŸilde bir alt satÄ±rdan baÅŸlamasÄ±
+    	        //iÃ§in yaptÄ±k  bu her okunduÄŸunda bir artarak devam edicek yani matristeki her elemanÄ±n bir saÄŸÄ±ndaki indisi alÄ±cak hep
+    	        goruntuMatrisiPointer[matrisinIndisi]=atanacakIndisler;//o elemanlarÄ±da matrisin 0 dan satÄ±r ve sÃ¼tun sayÄ±sÄ± Ã§arpÄ±mÄ±na kadar bÃ¼tÃ¼n indislerine atÄ±cak
+    	        matrisinIndisi++;//matrisin indisini 1 arttÄ±rÄ±yoruz her iterasyonda
 	      }
 	    }
-	    int siralamaMatrisi[25];//sıralıcağımız indis değerlerini attığımız dizi yani filtrede uygulamaya alınacak indisleri bu dizide tutucaz.
+	    int siralamaMatrisi[25];//sÄ±ralÄ±caÄŸÄ±mÄ±z indis deÄŸerlerini attÄ±ÄŸÄ±mÄ±z dizi yani filtrede uygulamaya alÄ±nacak indisleri bu dizide tutucaz.
            struct timeval currentTime;
 	   double startTime,endTime,elapsedTime;
 	
 	  // Get the current time. 2nd argument NULL because we don't care about time zone
     	   gettimeofday(&currentTime, NULL); //Seconds from the epoch time
            startTime=currentTime.tv_sec+(currentTime.tv_usec/1000000.0); 		
-			////Süresini Ölçmek İstediğiniz Program Burada////	
+			////SÃ¼resini Ã–lÃ§mek Ä°stediÄŸiniz Program Burada////	
 
 
-	    for(int s1=2;s1<satirlar-1;s1++)//ilk 2 satırı ve son 2 satırı almıyacak şekilde bir döngü tanımladık bu döngü satırları dolaşıcak s1 i 2 den başlattık
-	    //ve satirlarin 1 eksiğine kadar gittik oradada küçük eşittir olmadığı için aslında son iki satırıda almıcak 
-	    //çünkü indisler 0 dan başladığı için 0.satır ve 1. satır ilk iki satır oluyo yani bunları almamış oluyoruz birde burda önemli olan kısım şu 
-	    //Bizim goruntuMatrisiPointer a attığımız değerler filtre uygulanacak olan matrisin yani indislerin olduğu matrisin ilk satırını almıyor yani
-	    //satır sayısı ve sütun sayısı yazan satırı almıyor onun nedeni 47.kod satırında atanacakIndisler'i okumamız bunu okuduğumuzda 33 ve 34.satırda
-	    //satırlar ve sütunlar bilgisini aldıktan sonra ilk aldığımız değer matrisin ilk elemanı olucak 
+	    for(int s1=2;s1<satirlar-1;s1++)//ilk 2 satÄ±rÄ± ve son 2 satÄ±rÄ± almÄ±yacak ÅŸekilde bir dÃ¶ngÃ¼ tanÄ±mladÄ±k bu dÃ¶ngÃ¼ satÄ±rlarÄ± dolaÅŸÄ±cak s1 i 2 den baÅŸlattÄ±k
+	    //ve satirlarin 1 eksiÄŸine kadar gittik oradada kÃ¼Ã§Ã¼k eÅŸittir olmadÄ±ÄŸÄ± iÃ§in aslÄ±nda son iki satÄ±rÄ±da almÄ±cak 
+	    //Ã§Ã¼nkÃ¼ indisler 0 dan baÅŸladÄ±ÄŸÄ± iÃ§in 0.satÄ±r ve 1. satÄ±r ilk iki satÄ±r oluyo yani bunlarÄ± almamÄ±ÅŸ oluyoruz birde burda Ã¶nemli olan kÄ±sÄ±m ÅŸu 
+	    //Bizim goruntuMatrisiPointer a attÄ±ÄŸÄ±mÄ±z deÄŸerler filtre uygulanacak olan matrisin yani indislerin olduÄŸu matrisin ilk satÄ±rÄ±nÄ± almÄ±yor yani
+	    //satÄ±r sayÄ±sÄ± ve sÃ¼tun sayÄ±sÄ± yazan satÄ±rÄ± almÄ±yor onun nedeni 47.kod satÄ±rÄ±nda atanacakIndisler'i okumamÄ±z bunu okuduÄŸumuzda 33 ve 34.satÄ±rda
+	    //satÄ±rlar ve sÃ¼tunlar bilgisini aldÄ±ktan sonra ilk aldÄ±ÄŸÄ±mÄ±z deÄŸer matrisin ilk elemanÄ± olucak 
 	    {
-	      for(int s2=2;s2<sutunlar-1;s2++)//sütunları dolaşmamız için bir döngü oluşturduk bu döngü de ilk iki ve son iki sütunu dahil etmicek 
-	      //burda da dıştaki fordaki gibi s2 yi 2 den ve sütunların 1 eksiğine kadar götürüyoruz
+	      for(int s2=2;s2<sutunlar-1;s2++)//sÃ¼tunlarÄ± dolaÅŸmamÄ±z iÃ§in bir dÃ¶ngÃ¼ oluÅŸturduk bu dÃ¶ngÃ¼ de ilk iki ve son iki sÃ¼tunu dahil etmicek 
+	      //burda da dÄ±ÅŸtaki fordaki gibi s2 yi 2 den ve sÃ¼tunlarÄ±n 1 eksiÄŸine kadar gÃ¶tÃ¼rÃ¼yoruz
 	      {
-	      	//Filtreleme uygulaması için filtre uygulanacak değerlerin komşu değerlerini(yani filtre uygulanacak herbir değer için 25 tane komşu değeri var)
-	      	//siralamaMatrisi adında bir tek boyutlu diziye atadık.0 dan 24 e kadar yani toplam 24 değer oluşcak siralamaMatrisi içinde
-	      	//Filtreyi uygulama mantığı;şimdi örnek olarak ilk görüntüde ilk filtre uygulanacak değer 87 bu değerin yerine 87 nin komşuları olan tüm değerlerin
-	      	//küçükten büyüğe sıralanıp ortancası bulunup eklenmeli burdada bu işlemi yapıyoruz.Fitrelenmemiş indis değerlerinin bulunduğu goruntuMatrisPointer
-	      	//dinamik dizisindeki 87 indisinin ilk komşusu 14 yani ilk satırdaki ilk indis(satir ve sütun sayılarının olduğu değerleri goruntuMatrisiPointer
-	      	//a atmadık dikkat)bu indisden başlayıp 87 ninde kendisi dahil olmak üzere 25 adet indisi sırayla siralamaMatrisinin içine atıcaz 83.kod satırından
-	      	//107.kod satırına kadar bu işlemi yapıyoruz
-	   	      //Filtreleme uygulaması için filtre uygulanacak değerlerin komşu değerlerini(yani filtre uygulanacak herbir değer için 25 tane komşu değeri var)
-	      	//siralamaMatrisi adında bir tek boyutlu diziye atadık.0 dan 24 e kadar yani toplam 24 değer oluşcak siralamaMatrisi içinde
-	      	//Filtreyi uygulama mantığı;şimdi örnek olarak ilk görüntüde ilk filtre uygulanacak değer 87 bu değerin yerine 87 nin komşuları olan tüm değerlerin
-	      	//küçükten büyüğe sıralanıp ortancası bulunup eklenmeli burdada bu işlemi yapıyoruz.Fitrelenmemiş indis değerlerinin bulunduğu goruntuMatrisPointer
-	      	//dinamik dizisindeki 87 indisinin ilk komşusu 14 yani ilk satırdaki ilk indis(satir ve sütun sayılarının olduğu değerleri goruntuMatrisiPointer
-	      	//a atmadık dikkat)bu indisden başlayıp 87 ninde kendisi dahil olmak üzere 25 adet indisi sırayla siralamaMatrisinin içine atıcaz 83.kod satırından
-	      	//107.kod satırına kadar bu işlemi yapıyoruz
+	      	//Filtreleme uygulamasÄ± iÃ§in filtre uygulanacak deÄŸerlerin komÅŸu deÄŸerlerini(yani filtre uygulanacak herbir deÄŸer iÃ§in 25 tane komÅŸu deÄŸeri var)
+	      	//siralamaMatrisi adÄ±nda bir tek boyutlu diziye atadÄ±k.0 dan 24 e kadar yani toplam 24 deÄŸer oluÅŸcak siralamaMatrisi iÃ§inde
+	      	//Filtreyi uygulama mantÄ±ÄŸÄ±;ÅŸimdi Ã¶rnek olarak ilk gÃ¶rÃ¼ntÃ¼de ilk filtre uygulanacak deÄŸer 87 bu deÄŸerin yerine 87 nin komÅŸularÄ± olan tÃ¼m deÄŸerlerin
+	      	//kÃ¼Ã§Ã¼kten bÃ¼yÃ¼ÄŸe sÄ±ralanÄ±p ortancasÄ± bulunup eklenmeli burdada bu iÅŸlemi yapÄ±yoruz.FitrelenmemiÅŸ indis deÄŸerlerinin bulunduÄŸu goruntuMatrisPointer
+	      	//dinamik dizisindeki 87 indisinin ilk komÅŸusu 14 yani ilk satÄ±rdaki ilk indis(satir ve sÃ¼tun sayÄ±larÄ±nÄ±n olduÄŸu deÄŸerleri goruntuMatrisiPointer
+	      	//a atmadÄ±k dikkat)bu indisden baÅŸlayÄ±p 87 ninde kendisi dahil olmak Ã¼zere 25 adet indisi sÄ±rayla siralamaMatrisinin iÃ§ine atÄ±caz 83.kod satÄ±rÄ±ndan
+	      	//107.kod satÄ±rÄ±na kadar bu iÅŸlemi yapÄ±yoruz
+	   	      //Filtreleme uygulamasÄ± iÃ§in filtre uygulanacak deÄŸerlerin komÅŸu deÄŸerlerini(yani filtre uygulanacak herbir deÄŸer iÃ§in 25 tane komÅŸu deÄŸeri var)
+	      	//siralamaMatrisi adÄ±nda bir tek boyutlu diziye atadÄ±k.0 dan 24 e kadar yani toplam 24 deÄŸer oluÅŸcak siralamaMatrisi iÃ§inde
+	      	//Filtreyi uygulama mantÄ±ÄŸÄ±;ÅŸimdi Ã¶rnek olarak ilk gÃ¶rÃ¼ntÃ¼de ilk filtre uygulanacak deÄŸer 87 bu deÄŸerin yerine 87 nin komÅŸularÄ± olan tÃ¼m deÄŸerlerin
+	      	//kÃ¼Ã§Ã¼kten bÃ¼yÃ¼ÄŸe sÄ±ralanÄ±p ortancasÄ± bulunup eklenmeli burdada bu iÅŸlemi yapÄ±yoruz.FitrelenmemiÅŸ indis deÄŸerlerinin bulunduÄŸu goruntuMatrisPointer
+	      	//dinamik dizisindeki 87 indisinin ilk komÅŸusu 14 yani ilk satÄ±rdaki ilk indis(satir ve sÃ¼tun sayÄ±larÄ±nÄ±n olduÄŸu deÄŸerleri goruntuMatrisiPointer
+	      	//a atmadÄ±k dikkat)bu indisden baÅŸlayÄ±p 87 ninde kendisi dahil olmak Ã¼zere 25 adet indisi sÄ±rayla siralamaMatrisinin iÃ§ine atÄ±caz 83.kod satÄ±rÄ±ndan
+	      	//107.kod satÄ±rÄ±na kadar bu iÅŸlemi yapÄ±yoruz
 	   	      siralamaMatrisi[0]=goruntuMatrisiPointer[(s1-2)*sutunlar+s2-2];
 	   	      siralamaMatrisi[1]=goruntuMatrisiPointer[(s1-2)*sutunlar+s2-1];
 	   	      siralamaMatrisi[2]=goruntuMatrisiPointer[(s1-2)*sutunlar+s2];
@@ -108,7 +100,7 @@ int main(int argc, char* argv[]) {
 	   	      siralamaMatrisi[22]=goruntuMatrisiPointer[(s1+2)*sutunlar+s2];
 	   	      siralamaMatrisi[23]=goruntuMatrisiPointer[(s1+2)*sutunlar+s2+1];
 	   	      siralamaMatrisi[24]=goruntuMatrisiPointer[(s1+2)*sutunlar+s2+2];					
-	   	      //şimdi sıralamaMatrisindeki bu 25 değeri bubble sort algoritması ile küçükten büyüğe sıralıcaz
+	   	      //ÅŸimdi sÄ±ralamaMatrisindeki bu 25 deÄŸeri bubble sort algoritmasÄ± ile kÃ¼Ã§Ã¼kten bÃ¼yÃ¼ÄŸe sÄ±ralÄ±caz
 	   	      for(int i=0;i<25;i++)
 	   	      {
 	   	     	for(int j=i;j<25;j++)
@@ -123,7 +115,7 @@ int main(int argc, char* argv[]) {
 	   	 	
 		      }
 	   	 
-	           goruntuMatrisiPointer[s1*sutunlar+s2]=siralamaMatrisi[12];//ortanca degeri bulup ilgili indise atıcaz
+	           goruntuMatrisiPointer[s1*sutunlar+s2]=siralamaMatrisi[12];//ortanca degeri bulup ilgili indise atÄ±caz
 	      }
 	    }
 
@@ -136,35 +128,35 @@ int main(int argc, char* argv[]) {
 	    	   
     	
     	
-	    char ciktiDosyasi[28];//Filtrelenmiş matrisin çıktı halini char dizisi şeklinde tanımladık örn:GoruntuMatrisi1
-    	    string ciktiDosyasiUzantisi= "_filtered.txt";//argümanın sonuna uzantı eklemek için değişken tanımladık
+	    char ciktiDosyasi[28];//FiltrelenmiÅŸ matrisin Ã§Ä±ktÄ± halini char dizisi ÅŸeklinde tanÄ±mladÄ±k Ã¶rn:GoruntuMatrisi1
+    	    string ciktiDosyasiUzantisi= "_filtered.txt";//argÃ¼manÄ±n sonuna uzantÄ± eklemek iÃ§in deÄŸiÅŸken tanÄ±mladÄ±k
     	    for(int s1=0; s1<15; s1++)//0 dan 15 e kadar gidicek for 
 	    {
-	      ciktiDosyasi[s1]=argv[1][s1+22];// argümanın toplam (.txt hariç) 38 karakteri var biz sadece GoruntuMatrisi1 örneği şeklinde 15 karakterli bir değer atadık	
+	      ciktiDosyasi[s1]=argv[1][s1+22];// argÃ¼manÄ±n toplam (.txt hariÃ§) 38 karakteri var biz sadece GoruntuMatrisi1 Ã¶rneÄŸi ÅŸeklinde 15 karakterli bir deÄŸer atadÄ±k	
 	    }
-	    for(int s1=0; s1<14; s1++)//sonra o 15 değerli karakterin sonuna 15 ten başlayarak(15 ten alttaki forda başlıyor) (devamı altta ki açıklama satırında)
+	    for(int s1=0; s1<14; s1++)//sonra o 15 deÄŸerli karakterin sonuna 15 ten baÅŸlayarak(15 ten alttaki forda baÅŸlÄ±yor) (devamÄ± altta ki aÃ§Ä±klama satÄ±rÄ±nda)
 	    {
-	      ciktiDosyasi[s1+15] = ciktiDosyasiUzantisi[s1];//uzantıyı atadık artık içinde GoruntuMatrisi1_filtered.txt örneği şeklinde bir değer olmuş oldu
+	      ciktiDosyasi[s1+15] = ciktiDosyasiUzantisi[s1];//uzantÄ±yÄ± atadÄ±k artÄ±k iÃ§inde GoruntuMatrisi1_filtered.txt Ã¶rneÄŸi ÅŸeklinde bir deÄŸer olmuÅŸ oldu
 	    } 								
 		
-	    ofstream yazilacakDosya;//yazilacak dosyayı çıktı dosyası olarak ayarladık
-	    yazilacakDosya.open(ciktiDosyasi, ios::out);//burda char dizisini çevirme işlemi ve yazılacak dosyayı açma işlemi yapıyoruz
+	    ofstream yazilacakDosya;//yazilacak dosyayÄ± Ã§Ä±ktÄ± dosyasÄ± olarak ayarladÄ±k
+	    yazilacakDosya.open(ciktiDosyasi, ios::out);//burda char dizisini Ã§evirme iÅŸlemi ve yazÄ±lacak dosyayÄ± aÃ§ma iÅŸlemi yapÄ±yoruz
             //yazilacakDosya<<satirlar;
             //yazilacakDosya<<sutunlar;
-	    for(int s1=0; s1<satirlar; s1++)//satırlara kadar giden bir döngü
+	    for(int s1=0; s1<satirlar; s1++)//satÄ±rlara kadar giden bir dÃ¶ngÃ¼
             {
-               for(int s2=0; s2<sutunlar; s2++)//sütunlara kadar giden bir döngü
+               for(int s2=0; s2<sutunlar; s2++)//sÃ¼tunlara kadar giden bir dÃ¶ngÃ¼
 	       {
-		  yazilacakDosya<<goruntuMatrisiPointer[s1*sutunlar+s2]<<"\t";//yazılacak matris değerleri matrisin ilk satır ve ilk sütunundan başlıcak
-                  //dikkat et matrisin satır ve sütun bilgisinin yazdığı satırı almıcak onu almak isteseydik bu satırın üstündeki 7.ve 8.sütunu
-                  //satı ve sütun sayısı bilgisini yazdırdığımız kısmı açıklama satırından kaldırmamız gerekirdi
+		  yazilacakDosya<<goruntuMatrisiPointer[s1*sutunlar+s2]<<"\t";//yazÄ±lacak matris deÄŸerleri matrisin ilk satÄ±r ve ilk sÃ¼tunundan baÅŸlÄ±cak
+                  //dikkat et matrisin satÄ±r ve sÃ¼tun bilgisinin yazdÄ±ÄŸÄ± satÄ±rÄ± almÄ±cak onu almak isteseydik bu satÄ±rÄ±n Ã¼stÃ¼ndeki 7.ve 8.sÃ¼tunu
+                  //satÄ± ve sÃ¼tun sayÄ±sÄ± bilgisini yazdÄ±rdÄ±ÄŸÄ±mÄ±z kÄ±smÄ± aÃ§Ä±klama satÄ±rÄ±ndan kaldÄ±rmamÄ±z gerekirdi
 					
 	       }
 	           yazilacakDosya<<endl;
 	    }	
 
-	    okunacakDosya.close();//okunacak dosyayı kapattık
-	    yazilacakDosya.close();//yazılacak dosyayı kapattık 
+	    okunacakDosya.close();//okunacak dosyayÄ± kapattÄ±k
+	    yazilacakDosya.close();//yazÄ±lacak dosyayÄ± kapattÄ±k 
 	    delete [] goruntuMatrisiPointer;//dinamnik diziyi sildik
 	
 	
